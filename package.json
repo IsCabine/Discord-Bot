@@ -1,0 +1,17 @@
+***REMOVED***
+  "name": "Bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": ***REMOVED***
+    "test": "echo \"Error: no test specified\" && exit 1"
+  ***REMOVED***,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": ***REMOVED***
+    "discord.js": "^11.5.1",
+    "mathjs": "^6.0.3",
+    "request": "^2.88.0"
+  ***REMOVED***
+***REMOVED***
