@@ -26,12 +26,12 @@ module.exports.run = (e, args) => ***REMOVED***
     let translation = fetched.text[0];
     if(translation.length <= 1024 && arg.length <= 1024) ***REMOVED***
       let embed = new Discord.RichEmbed();
-      let color = preload_data.colors[preload_data.embed_colors.random()];
+      let color = Functions.generateEmbedColor();
 
       embed.setTitle(`🈵 Translate ($***REMOVED***fetched.lang***REMOVED***)`);
       embed.addField('Input', arg);
       embed.addField('Output', translation);
-      embed.setFooter(preload_data.embed_footer);
+      embed.setFooter(preload_data.embed.default_footer);
       embed.setColor(color);
 
       e.channel.send(***REMOVED***embed***REMOVED***).catch(console.error);

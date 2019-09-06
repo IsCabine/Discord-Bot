@@ -2,13 +2,13 @@ module.exports.run = (e, args) => ***REMOVED***
   let arg = Functions.joinArgs(args);
   let embed = new Discord.RichEmbed();
   let output = arg.reverse();
-  let color = preload_data.colors[preload_data.embed_colors.random()];
+  let color = Functions.generateEmbedColor();
 
   if(arg.length <= 1024) ***REMOVED***
     embed.setTitle(`🔃 Reverse`);
     embed.addField('Input', arg);
     embed.addField('Output', output);
-    embed.setFooter(preload_data.embed_footer);
+    embed.setFooter(preload_data.embed.default_footer);
     embed.setColor(color);
 
     return ***REMOVED***embed***REMOVED***;

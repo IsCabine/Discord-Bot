@@ -1,0 +1,1 @@
+module.exports = num => num.toString().replace(/\B(?=(\d***REMOVED***3***REMOVED***)+(?!\d))/g, ',');

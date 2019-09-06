@@ -7,11 +7,13 @@ global.fs = require('fs');
 global.path = require('path');
 global.request = require('request');
 global.config = JSON.parse(fs.readFileSync('config.json'));
-global.preload_data = JSON.parse(fs.readFileSync('preload_data.json'));
 global.mathjs = require('mathjs');
 
 const iterateDir = require('./Functions/iterateDir');
 global.Functions = new Object();
+
+const removeExtension = (file, extension = 'js') => file.replace(`.$***REMOVED***extension***REMOVED***`, new String());
+getGlobals();
 
 Client.once('ready', () => ***REMOVED***
   const cmds = fs.readdirSync('Commands').return(item => item.replace('.js', new String()));
@@ -48,7 +50,7 @@ Client.once('ready', () => ***REMOVED***
   ***REMOVED***);
 
   iterateDir('Actions', action => ***REMOVED***
-    let name = action.replace('.js', new String());
+    let name = removeExtension(action);
 
     console.log(`[$***REMOVED***Date.now()***REMOVED***] Running Action: $***REMOVED***name***REMOVED***`);
     require(`./Actions/$***REMOVED***name***REMOVED***`)().then(info => ***REMOVED***
@@ -63,17 +65,27 @@ Client.once('ready', () => ***REMOVED***
   ***REMOVED***);
 ***REMOVED***);
 
-iterateDir('Prototypes', type => ***REMOVED***
-  let typeDir = fs.readdirSync(`Prototypes/$***REMOVED***type***REMOVED***`);
-  typeDir.forEach(typeFile => ***REMOVED***
-    let t = typeFile.replace('.js', new String());
-    global[type].prototype[t] = require(`./Prototypes/$***REMOVED***type***REMOVED***/$***REMOVED***t***REMOVED***`);
+function getGlobals() ***REMOVED***
+  iterateDir('Prototypes', type => ***REMOVED***
+    let typeDir = fs.readdirSync(`Prototypes/$***REMOVED***type***REMOVED***`);
+    typeDir.forEach(typeFile => ***REMOVED***
+      let t = removeExtension(typeFile);
+      global[type].prototype[t] = require(`./Prototypes/$***REMOVED***type***REMOVED***/$***REMOVED***t***REMOVED***`);
+    ***REMOVED***);
   ***REMOVED***);
-***REMOVED***);
-
-iterateDir('Functions', funcFile => ***REMOVED***
-  let func = funcFile.replace('.js', new String());
-  global.Functions[func] = require(`./Functions/$***REMOVED***func***REMOVED***`);
-***REMOVED***);
+  
+  iterateDir('Functions', funcFile => ***REMOVED***
+    let func = removeExtension(funcFile);
+    global.Functions[func] = require(`./Functions/$***REMOVED***func***REMOVED***`);
+  ***REMOVED***);
+  
+  let preload = new Object();
+  iterateDir('Preload_Data', dataFileName => ***REMOVED***
+    let dataName = removeExtension(dataFileName, 'json');
+    preload[dataName] = JSON.parse(fs.readFileSync(`Preload_Data/$***REMOVED***dataFileName***REMOVED***`));
+  ***REMOVED***);
+  
+  global.preload_data = preload;
+***REMOVED***
 
 Client.login(config.token).catch(console.error);

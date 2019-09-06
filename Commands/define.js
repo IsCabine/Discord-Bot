@@ -8,17 +8,24 @@ module.exports.run = (e, args) => ***REMOVED***
   if(args.length < 1) return '🇽 You must supply a word to define';
   if(hasDisallowedChar) return '🇽 This word has a blocked character. :(\n   | Inputs to this command cannot contain `&, ?, =, /, \\, :, ", <, >, |, or .`'
   Functions.fetchAPI(api_url).then(fetched => ***REMOVED***
-    if(fetched.length < 1) return e.channel.send(`🇽 The word \`$***REMOVED***arg***REMOVED***\` is not recognized.`);
+    let unfoundError = () => e.channel.send(`🇽 The word \`$***REMOVED***arg***REMOVED***\` is not recognized.`);
+    if(fetched.length < 1) return unfoundError();
 
     let maxDefinitions = index = 0;
-    let names = fetched.return(def => def.meta.id.split(':')[0]);
+    let isLocked = false;
+
+    try ***REMOVED***
+      var names = fetched.return(def => def.meta.id.split(':')[0]);
+    ***REMOVED*** catch(error) ***REMOVED***
+      return unfoundError();
+    ***REMOVED***
 
     names.forEach(name => ***REMOVED***
       if(names[0] === name) maxDefinitions++;
     ***REMOVED***);
 
-    let color = preload_data.colors[preload_data.embed_colors.random()];
-    let runGenerateEmbed = () => generateEmbed(fetched, index, arg, maxDefinitions, color);
+    let color = Functions.generateEmbedColor();
+    let runGenerateEmbed = () => generateEmbed(fetched, index, arg, maxDefinitions, color, isLocked);
     let embed = runGenerateEmbed();
 
     e.channel.send(embed).then(message => ***REMOVED***
@@ -28,7 +35,7 @@ module.exports.run = (e, args) => ***REMOVED***
         let onReactionUpdate = (reaction, user) => ***REMOVED***
           if(user.id !== e.author.id) return;
           if(reaction.message.id !== message.id) return;
-          
+
           switch(reaction.emoji.name) ***REMOVED***
           case '◀':
             if(index === 0) index = maxDefinitions - 1;
@@ -47,12 +54,32 @@ module.exports.run = (e, args) => ***REMOVED***
 
         Client.on('messageReactionAdd', onReactionUpdate);
         Client.on('messageReactionRemove', onReactionUpdate);
+
+        setTimeout(() => ***REMOVED***
+          message.reactions.forEach(reaction => ***REMOVED***
+            if(reaction.emoji.name !== '◀' && reaction.emoji.name !== '▶') return;
+
+            if(e.guild.me.hasPermission('MANAGE_MESSAGES')) ***REMOVED***
+              reaction.users.forEach(user => ***REMOVED***
+                reaction.remove(user).catch(console.error);
+              ***REMOVED***);
+            ***REMOVED***else ***REMOVED***
+              reaction.remove().catch(console.error);
+            ***REMOVED***
+          ***REMOVED***);
+
+          Client.removeListener('messageReactionAdd', onReactionUpdate);
+          Client.removeListener('messageReactionRemove', onReactionUpdate);
+
+          isLocked = true;
+          message.edit(runGenerateEmbed());
+        ***REMOVED***, 0.2 * 60 * 1000);
       ***REMOVED***));
     ***REMOVED***);
   ***REMOVED***);
 ***REMOVED***;
 
-function generateEmbed(fetched, index, arg, maxDefinitions, color) ***REMOVED***
+function generateEmbed(fetched, index, arg, maxDefinitions, color, isLocked) ***REMOVED***
   let data = fetched[index];
   if(data.shortdef.length < 1) return `🇽 Cannot parse definition of \`$***REMOVED***arg***REMOVED***\`.`;
 
@@ -69,9 +96,9 @@ function generateEmbed(fetched, index, arg, maxDefinitions, color) ***REMOVED***
   let embed = new Discord.RichEmbed();
   embed.setAuthor(`\📙 Define`);
   embed.setTitle(embedTitle);
-  embed.setDescription(`($***REMOVED***data.fl.toProperCase()***REMOVED***)`);
+  embed.setDescription(`$***REMOVED***data.meta.offensive ? '[Offensive] ' : new String()***REMOVED***($***REMOVED***data.fl.toProperCase()***REMOVED***)$***REMOVED***isLocked ? ' [Locked]' : new String()***REMOVED***`);
   embed.addField('Definition', definition);
-  embed.setFooter(`Defintion $***REMOVED***index + 1***REMOVED***/$***REMOVED***maxDefinitions***REMOVED***\n$***REMOVED***preload_data.embed_footer***REMOVED***`);
+  embed.setFooter(`Defintion $***REMOVED***index + 1***REMOVED***/$***REMOVED***maxDefinitions***REMOVED***\n$***REMOVED***preload_data.embed.default_footer***REMOVED***`);
   embed.setColor(color);
 
   return ***REMOVED***embed***REMOVED***;
