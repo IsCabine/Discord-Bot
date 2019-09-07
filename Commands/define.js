@@ -73,7 +73,7 @@ module.exports.run = (e, args) => ***REMOVED***
 
           isLocked = true;
           message.edit(runGenerateEmbed());
-        ***REMOVED***, 0.2 * 60 * 1000);
+        ***REMOVED***, preload_data.embed.timer_duration);
       ***REMOVED***));
     ***REMOVED***);
   ***REMOVED***);
@@ -94,7 +94,7 @@ function generateEmbed(fetched, index, arg, maxDefinitions, color, isLocked) ***
   ***REMOVED***);
 
   let embed = new Discord.RichEmbed();
-  embed.setAuthor(`\📙 Define`);
+  embed.setAuthor(`\\📙 Define`);
   embed.setTitle(embedTitle);
   embed.setDescription(`$***REMOVED***data.meta.offensive ? '[Offensive] ' : new String()***REMOVED***($***REMOVED***data.fl.toProperCase()***REMOVED***)$***REMOVED***isLocked ? ' [Locked]' : new String()***REMOVED***`);
   embed.addField('Definition', definition);
@@ -102,4 +102,4 @@ function generateEmbed(fetched, index, arg, maxDefinitions, color, isLocked) ***
   embed.setColor(color);
 
   return ***REMOVED***embed***REMOVED***;
-***REMOVED***;
+***REMOVED***
