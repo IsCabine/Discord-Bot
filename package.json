@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": ***REMOVED***
     "discord.js": "^11.5.1",
-    "mathjs": "^6.0.3",
+    "mathjs": "^6.6.0",
     "request": "^2.88.0",
     "trivia-api": "^1.0.1"
   ***REMOVED***
