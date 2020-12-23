@@ -1,13 +1,23 @@
-module.exports.run = (e, args) => ***REMOVED***
-  let arg = Functions.joinArgs(args);
-  let key = config.dictionary_token;
-  let restrictedRexExp = /\&|\?|\=|\/|\\|:|"|<|>|\||\./;
-  let hasDisallowedChar = restrictedRexExp.test(arg);
-  let api_url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/$***REMOVED***arg***REMOVED***?key=$***REMOVED***key***REMOVED***`;
+const fetchAPI = require('../Functions/fetchAPI');
+const joinArgs = require('../Functions/joinArgs');
+const generateEmbedColor = require('../Functions/generateEmbedColor');
+const Discord = require('discord.js');
+const getData = require('../Functions/getData');
+
+const embed_data = getData('embed');
+const config = getData('config');
+
+module.exports.run = (e, args, Client) => ***REMOVED***
+  const arg = joinArgs(args);
+  const key = config.dictionary_token;
+  const restrictedRexExp = /\&|\?|\=|\/|\\|:|"|<|>|\||\./;
+  const hasDisallowedChar = restrictedRexExp.test(arg);
+  const api_url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/$***REMOVED***arg***REMOVED***?key=$***REMOVED***key***REMOVED***`;
 
   if(args.length < 1) return '🇽 You must supply a word to define';
   if(hasDisallowedChar) return '🇽 This word has a blocked character. :(\n   | Inputs to this command cannot contain `&, ?, =, /, \\, :, ", <, >, |, or .`'
-  Functions.fetchAPI(api_url).then(fetched => ***REMOVED***
+  
+  fetchAPI(api_url).then(fetched => ***REMOVED***
     let unfoundError = () => e.channel.send(`🇽 The word \`$***REMOVED***arg***REMOVED***\` is not recognized.`);
     if(fetched.length < 1) return unfoundError();
 
@@ -15,7 +25,7 @@ module.exports.run = (e, args) => ***REMOVED***
     let isLocked = false;
 
     try ***REMOVED***
-      var names = fetched.return(def => def.meta.id.split(':')[0]);
+      var names = fetched.map(def => def.meta.id.split(':')[0]);
     ***REMOVED*** catch(error) ***REMOVED***
       return unfoundError();
     ***REMOVED***
@@ -24,7 +34,7 @@ module.exports.run = (e, args) => ***REMOVED***
       if(names[0] === name) maxDefinitions++;
     ***REMOVED***);
 
-    let color = Functions.generateEmbedColor();
+    let color = generateEmbedColor();
     let runGenerateEmbed = () => generateEmbed(fetched, index, arg, maxDefinitions, color, isLocked);
     let embed = runGenerateEmbed();
 
@@ -73,7 +83,7 @@ module.exports.run = (e, args) => ***REMOVED***
 
           isLocked = true;
           message.edit(runGenerateEmbed());
-        ***REMOVED***, preload_data.embed.timer_duration);
+        ***REMOVED***, embed_data.timer_duration);
       ***REMOVED***));
     ***REMOVED***);
   ***REMOVED***);
@@ -98,7 +108,7 @@ function generateEmbed(fetched, index, arg, maxDefinitions, color, isLocked) ***
   embed.setTitle(embedTitle);
   embed.setDescription(`$***REMOVED***data.meta.offensive ? '[Offensive] ' : new String()***REMOVED***($***REMOVED***data.fl.toProperCase()***REMOVED***)$***REMOVED***isLocked ? ' [Locked]' : new String()***REMOVED***`);
   embed.addField('Definition', definition);
-  embed.setFooter(`Defintion $***REMOVED***index + 1***REMOVED***/$***REMOVED***maxDefinitions***REMOVED***\n$***REMOVED***preload_data.embed.default_footer***REMOVED***`);
+  embed.setFooter(`Defintion $***REMOVED***index + 1***REMOVED***/$***REMOVED***maxDefinitions***REMOVED***\n$***REMOVED***embed_data.default_footer***REMOVED***`);
   embed.setColor(color);
 
   return ***REMOVED***embed***REMOVED***;

@@ -1,23 +1,31 @@
-module.exports.run = (e, args) => ***REMOVED***
+const getData = require('../Functions/getData');
+const joinArgs = require('../Functions/joinArgs');
+const fetchAPI = require('../Functions/fetchAPI');
+const generateEmbedColor = require('../Functions/generateEmbedColor');
+
+const embed_data = getData('embed');
+const langs_data = getData('translate_langs');
+const config = getData('config');
+
+module.exports.run = (e, args, Client) => ***REMOVED***
   let key = config.lang_token;
-  let arg = Functions.joinArgs(args, 1);
+  let arg = joinArgs(args, 1);
   let text = encodeURIComponent(arg);
   let word1 = args[0].toLowerCase();
-  let langs = preload_data.translate_langs;
-  let language = langs[word1] || Object.values(langs).find(lang => lang === word1);
+  let language = langs_data[word1] || Object.values(langs_data).find(lang => lang === word1);
 
   if(!language) return '🇽 This language name/code is invalid, formatted incorrect, or not supported. :(';
-  let lang = Object.keys(langs).find(langCode => langs[langCode] === language);
+  let lang = Object.keys(langs_data).find(langCode => langs_data[langCode] === language);
 
   let api_url = `https://translate.yandex.net/api/v1.5/tr.json/translate?key=$***REMOVED***key***REMOVED***&text=$***REMOVED***text***REMOVED***&lang=$***REMOVED***lang***REMOVED***`;
-  
+
   let messageError = (err = '🇽 An error has occurred :(') => e.channel.send(err).catch(console.error);
   let sentError = error => ***REMOVED***
     messageError();
     console.error(error);
   ***REMOVED***;
 
-  Functions.fetchAPI(api_url).then(fetched => ***REMOVED***
+  fetchAPI(api_url).then(fetched => ***REMOVED***
     if(fetched.code !== 200) ***REMOVED***
       console.log(`An error has been thrown: [Invalid Status Code: $***REMOVED***fetched.code***REMOVED***]`);
       return messageError();
@@ -26,12 +34,12 @@ module.exports.run = (e, args) => ***REMOVED***
     let translation = fetched.text[0];
     if(translation.length <= 1024 && arg.length <= 1024) ***REMOVED***
       let embed = new Discord.RichEmbed();
-      let color = Functions.generateEmbedColor();
+      let color = generateEmbedColor();
 
       embed.setTitle(`🈵 Translate ($***REMOVED***fetched.lang***REMOVED***)`);
       embed.addField('Input', arg);
       embed.addField('Output', translation);
-      embed.setFooter(preload_data.embed.default_footer);
+      embed.setFooter(embed_data.default_footer);
       embed.setColor(color);
 
       e.channel.send(***REMOVED***embed***REMOVED***).catch(console.error);

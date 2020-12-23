@@ -1,7 +1,13 @@
+const Discord = require('discord.js');
 const Trivia = require('trivia-api')
 const trivia = new Trivia(***REMOVED***encoding: 'url3986'***REMOVED***);
+const getData = require('../Functions/getData');
 
-module.exports.run = (e, args) => ***REMOVED***
+const embed_data = getData('embed');
+const color_data = getData('colors');
+const html_data = getData('html_entities');
+
+module.exports.run = (e, args, Client) => ***REMOVED***
   trivia.getQuestions().then(questions => ***REMOVED***
     if(questions.response_code !== 0) ***REMOVED***
       e.channel.send('🇽 Cannot get trivia question.');
@@ -12,8 +18,8 @@ module.exports.run = (e, args) => ***REMOVED***
     let isTF = question.correct_answer === 'True' || question.correct_answer === 'False';
     let embed = new Discord.RichEmbed();
 
-    embed.setColor(preload_data.colors.PURPLE);
-    embed.setFooter(preload_data.embed.default_footer);
+    embed.setColor(color_data.PURPLE);
+    embed.setFooter(embed_data.default_footer);
     embed.setTitle('\\🃏 Trivia');
     embed.addField('Category', question.category, true);
     embed.addField('Difficulty', question.difficulty.toProperCase(), true);
@@ -80,7 +86,7 @@ module.exports.run = (e, args) => ***REMOVED***
         removeReactionListener();
         if(!msg.deletable) return;
         msg.delete().catch(console.error);
-      ***REMOVED***, preload_data.embed.timer_duration);
+      ***REMOVED***, embed_data.timer_duration);
 
       function onReactionUpdate(reaction, user) ***REMOVED***
         if(user.id !== e.author.id) return;
@@ -92,10 +98,10 @@ module.exports.run = (e, args) => ***REMOVED***
         if(!isTF) ***REMOVED***
           if(isAnswer) ***REMOVED***
             if(answers[emoji] === question.correct_answer) ***REMOVED***
-              embed.setColor(preload_data.colors.GREEN);
+              embed.setColor(color_data.GREEN);
               embed.setTitle('\\🃏 Trivia         \\✅');
             ***REMOVED*** else ***REMOVED***
-              embed.setColor(preload_data.colors.RED);
+              embed.setColor(color_data.RED);
               embed.addField('Said', decode(`$***REMOVED***letters[emoji]***REMOVED***. $***REMOVED***answers[emoji]***REMOVED***`), true);
               embed.setTitle('\\🃏 Trivia         \\❌');
             ***REMOVED***
@@ -106,13 +112,13 @@ module.exports.run = (e, args) => ***REMOVED***
           ***REMOVED***
         ***REMOVED*** else ***REMOVED***
           let onCorrect = correct => ***REMOVED***
-            embed.setColor(preload_data.colors.GREEN);
+            embed.setColor(color_data.GREEN);
             embed.setTitle('\\🃏 Trivia         \\✅');
             embed.addField('Answer', correct, true);
           ***REMOVED***;
 
           let onIncorrect = (said, correct) => ***REMOVED***
-            embed.setColor(preload_data.colors.RED);
+            embed.setColor(color_data.RED);
             embed.addField('Said', said, true);
             embed.addField('Answer', correct, true);
             embed.setTitle('\\🃏 Trivia         \\❌');
@@ -162,10 +168,8 @@ module.exports.run = (e, args) => ***REMOVED***
 ***REMOVED***;
 
 function decode(text) ***REMOVED***
-  let entities = preload_data.html_entities;
-
-  for(let i in entities) ***REMOVED***
-    text = text.split(i).join(entities[i]);
+  for(let i in html_data) ***REMOVED***
+    text = text.split(i).join(html_data[i]);
   ***REMOVED***
 
   return text;
