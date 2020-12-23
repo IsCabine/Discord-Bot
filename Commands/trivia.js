@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const Trivia = require('trivia-api')
 const trivia = new Trivia(***REMOVED***encoding: 'url3986'***REMOVED***);
+const decodeHTML = require('../Functions/decodeHTML');
 const getData = require('../Functions/getData');
 
 const embed_data = getData('embed');
 const color_data = getData('colors');
-const html_data = getData('html_entities');
 
 module.exports.run = (e, args, Client) => ***REMOVED***
   trivia.getQuestions().then(questions => ***REMOVED***
@@ -30,7 +30,7 @@ module.exports.run = (e, args, Client) => ***REMOVED***
       embed.addField('Type', 'Multiple Choice', true);
     ***REMOVED***
 
-    embed.addField('Question', decode(question.question));
+    embed.addField('Question', decodeHTML(question.question));
 
     let answers = ***REMOVED***
       '🇦': null,
@@ -65,7 +65,7 @@ module.exports.run = (e, args, Client) => ***REMOVED***
         ansStr += `$***REMOVED***letters[i]***REMOVED***. $***REMOVED***answers[i]***REMOVED***\n`;
       ***REMOVED***
 
-      embed.addField('Answer Choices', decode(ansStr));
+      embed.addField('Answer Choices', decodeHTML(ansStr));
     ***REMOVED***
 
     e.channel.send(***REMOVED***embed***REMOVED***).then(msg => ***REMOVED***
@@ -102,12 +102,12 @@ module.exports.run = (e, args, Client) => ***REMOVED***
               embed.setTitle('\\🃏 Trivia         \\✅');
             ***REMOVED*** else ***REMOVED***
               embed.setColor(color_data.RED);
-              embed.addField('Said', decode(`$***REMOVED***letters[emoji]***REMOVED***. $***REMOVED***answers[emoji]***REMOVED***`), true);
+              embed.addField('Said', decodeHTML(`$***REMOVED***letters[emoji]***REMOVED***. $***REMOVED***answers[emoji]***REMOVED***`), true);
               embed.setTitle('\\🃏 Trivia         \\❌');
             ***REMOVED***
 
             removeReactionListener();
-            embed.addField('Answer', decode(`$***REMOVED***letters[correctLetter]***REMOVED***. $***REMOVED***question.correct_answer***REMOVED***`), true);
+            embed.addField('Answer', decodeHTML(`$***REMOVED***letters[correctLetter]***REMOVED***. $***REMOVED***question.correct_answer***REMOVED***`), true);
             msg.edit(***REMOVED***embed***REMOVED***);
           ***REMOVED***
         ***REMOVED*** else ***REMOVED***
@@ -166,11 +166,3 @@ module.exports.run = (e, args, Client) => ***REMOVED***
     ***REMOVED***).catch(console.error);
   ***REMOVED***);
 ***REMOVED***;
-
-function decode(text) ***REMOVED***
-  for(let i in html_data) ***REMOVED***
-    text = text.split(i).join(html_data[i]);
-  ***REMOVED***
-
-  return text;
-***REMOVED***

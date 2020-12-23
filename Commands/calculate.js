@@ -8,22 +8,26 @@ const color_data = require('../Functions/getData')('colors');
 module.exports.run = (e, args, Client) => ***REMOVED***
   const embed = new Discord.RichEmbed();
   const input = joinArgs(args, 0);
-  let color;
+  let color, output;
 
   embed.setTitle('\📐 Calculate');
-  embed.addField('Input', input);
+  embed.addField('Input', input || "None");
 
-  try ***REMOVED***
-    const output = mathjs.evaluate(input).toString();
-    color = generateEmbedColor();
-
-    embed.addField('Output', output);
-    embed.setColor(color);
-  ***REMOVED*** catch(err) ***REMOVED***
+  if(args.length > 0) ***REMOVED***
+    try ***REMOVED***
+      output = mathjs.evaluate(input).toString();
+      color = generateEmbedColor();
+    ***REMOVED*** catch(err) ***REMOVED***
+      color = color_data.RED;
+      output = 'Syntax Error';
+    ***REMOVED***
+  ***REMOVED*** else ***REMOVED***
     color = color_data.RED;
-    embed.setColor(color);
-    embed.addField('Output', 'Syntax Error');
+    output = 'Calculate command requires an expression';
   ***REMOVED***
+
+  embed.addField('Output', output);
+  embed.setColor(color);
 
   return ***REMOVED*** embed ***REMOVED***;
 ***REMOVED***;

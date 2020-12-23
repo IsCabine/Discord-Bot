@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": ***REMOVED***
     "discord.js": "^11.5.1",
+    "jsdom": "^16.4.0",
     "mathjs": "^6.6.0",
     "request": "^2.88.0",
-    "trivia-api": "^1.0.1"
+    "trivia-api": "^1.0.1",
+    "wikipedia": "^1.0.1"
   ***REMOVED***
 ***REMOVED***
