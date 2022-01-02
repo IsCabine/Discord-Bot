@@ -1,18 +1,18 @@
 const Discord = require('discord.js');
 const Trivia = require('trivia-api')
-const trivia = new Trivia(***REMOVED***encoding: 'url3986'***REMOVED***);
+const trivia = new Trivia({encoding: 'url3986'});
 const decodeHTML = require('../Functions/decodeHTML');
 const getData = require('../Functions/getData');
 
 const embed_data = getData('embed');
 const color_data = getData('colors');
 
-module.exports.run = (e, args, Client) => ***REMOVED***
-  trivia.getQuestions().then(questions => ***REMOVED***
-    if(questions.response_code !== 0) ***REMOVED***
+module.exports.run = (e, args, Client) => {
+  trivia.getQuestions().then(questions => {
+    if(questions.response_code !== 0) {
       e.channel.send('🇽 Cannot get trivia question.');
-      throw new Error(`Error ($***REMOVED***questions.response_code***REMOVED***): Cannot fetch trivia question.`);
-    ***REMOVED***
+      throw new Error(`Error (${questions.response_code}): Cannot fetch trivia question.`);
+    }
 
     let question = questions.results[0];
     let isTF = question.correct_answer === 'True' || question.correct_answer === 'False';
@@ -24,145 +24,145 @@ module.exports.run = (e, args, Client) => ***REMOVED***
     embed.addField('Category', question.category, true);
     embed.addField('Difficulty', question.difficulty.toProperCase(), true);
     
-    if(isTF) ***REMOVED***
+    if(isTF) {
       embed.addField('Type', 'True/False', true);
-    ***REMOVED*** else ***REMOVED***
+    } else {
       embed.addField('Type', 'Multiple Choice', true);
-    ***REMOVED***
+    }
 
     embed.addField('Question', decodeHTML(question.question));
 
-    let answers = ***REMOVED***
+    let answers = {
       '🇦': null,
       '🇧': null,
       '🇨': null,
       '🇩': null
-    ***REMOVED***;
+    };
 
-    let letters = ***REMOVED***
+    let letters = {
       '🇦': 'A',
       '🇧': 'B',
       '🇨': 'C',
       '🇩': 'D'
-    ***REMOVED***;
+    };
 
     let correctLetter = Object.keys(answers)[Math.floor(Math.random() * 4)];
 
-    if(!isTF) ***REMOVED***
+    if(!isTF) {
       console.log(question.incorrect_answers);
 
       answers[correctLetter] = question.correct_answer;
       let inAnsInd = 0;
 
-      for(let i in answers) ***REMOVED***
+      for(let i in answers) {
         if(answers[i] !== null) continue;
         answers[i] = question.incorrect_answers[inAnsInd];
         inAnsInd++;
-      ***REMOVED***
+      }
 
       let ansStr = new String();
-      for(let i in answers) ***REMOVED***
-        ansStr += `$***REMOVED***letters[i]***REMOVED***. $***REMOVED***answers[i]***REMOVED***\n`;
-      ***REMOVED***
+      for(let i in answers) {
+        ansStr += `${letters[i]}. ${answers[i]}\n`;
+      }
 
       embed.addField('Answer Choices', decodeHTML(ansStr));
-    ***REMOVED***
+    }
 
-    e.channel.send(***REMOVED***embed***REMOVED***).then(msg => ***REMOVED***
-      if(isTF) (async () => ***REMOVED***
+    e.channel.send({embed}).then(msg => {
+      if(isTF) (async () => {
         await msg.react('🇹').catch(console.error);
         await msg.react('🇫').catch(console.error);
         addReactionListeners();
-      ***REMOVED***)();
-      else (async () => ***REMOVED***
+      })();
+      else (async () => {
         await msg.react('🇦').catch(console.error);
         await msg.react('🇧').catch(console.error);
         await msg.react('🇨').catch(console.error);
         await msg.react('🇩').catch(console.error);
         addReactionListeners();
-      ***REMOVED***)();
+      })();
 
-      setTimeout(() => ***REMOVED***
+      setTimeout(() => {
         removeReactionListener();
         if(!msg.deletable) return;
         msg.delete().catch(console.error);
-      ***REMOVED***, embed_data.timer_duration);
+      }, embed_data.timer_duration);
 
-      function onReactionUpdate(reaction, user) ***REMOVED***
+      function onReactionUpdate(reaction, user) {
         if(user.id !== e.author.id) return;
         if(reaction.message.id !== msg.id) return;
 
         let emoji = reaction.emoji.name;
         let isAnswer = Object.keys(answers).includes(emoji);
 
-        if(!isTF) ***REMOVED***
-          if(isAnswer) ***REMOVED***
-            if(answers[emoji] === question.correct_answer) ***REMOVED***
+        if(!isTF) {
+          if(isAnswer) {
+            if(answers[emoji] === question.correct_answer) {
               embed.setColor(color_data.GREEN);
               embed.setTitle('\\🃏 Trivia         \\✅');
-            ***REMOVED*** else ***REMOVED***
+            } else {
               embed.setColor(color_data.RED);
-              embed.addField('Said', decodeHTML(`$***REMOVED***letters[emoji]***REMOVED***. $***REMOVED***answers[emoji]***REMOVED***`), true);
+              embed.addField('Said', decodeHTML(`${letters[emoji]}. ${answers[emoji]}`), true);
               embed.setTitle('\\🃏 Trivia         \\❌');
-            ***REMOVED***
+            }
 
             removeReactionListener();
-            embed.addField('Answer', decodeHTML(`$***REMOVED***letters[correctLetter]***REMOVED***. $***REMOVED***question.correct_answer***REMOVED***`), true);
-            msg.edit(***REMOVED***embed***REMOVED***);
-          ***REMOVED***
-        ***REMOVED*** else ***REMOVED***
-          let onCorrect = correct => ***REMOVED***
+            embed.addField('Answer', decodeHTML(`${letters[correctLetter]}. ${question.correct_answer}`), true);
+            msg.edit({embed});
+          }
+        } else {
+          let onCorrect = correct => {
             embed.setColor(color_data.GREEN);
             embed.setTitle('\\🃏 Trivia         \\✅');
             embed.addField('Answer', correct, true);
-          ***REMOVED***;
+          };
 
-          let onIncorrect = (said, correct) => ***REMOVED***
+          let onIncorrect = (said, correct) => {
             embed.setColor(color_data.RED);
             embed.addField('Said', said, true);
             embed.addField('Answer', correct, true);
             embed.setTitle('\\🃏 Trivia         \\❌');
-          ***REMOVED***;
+          };
 
-          if(emoji === '🇹') ***REMOVED***
+          if(emoji === '🇹') {
             if(question.correct_answer === 'True') onCorrect('True');
             else onIncorrect('True', 'False');
 
-            msg.edit(***REMOVED***embed***REMOVED***);
+            msg.edit({embed});
             removeReactionListener();
-          ***REMOVED***
+          }
 
-          if(emoji === '🇫') ***REMOVED***
+          if(emoji === '🇫') {
             if(question.correct_answer === 'False') onCorrect('False')
             else onIncorrect('False', 'True');
 
-            msg.edit(***REMOVED***embed***REMOVED***);
+            msg.edit({embed});
             removeReactionListener();
-          ***REMOVED***
-        ***REMOVED***
-      ***REMOVED***
+          }
+        }
+      }
 
-      function addReactionListeners() ***REMOVED***
+      function addReactionListeners() {
         Client.on('messageReactionAdd', onReactionUpdate);
         Client.on('messageReactionRemove', onReactionUpdate);
-      ***REMOVED***
+      }
 
-      function removeReactionListener() ***REMOVED***
+      function removeReactionListener() {
         Client.removeListener('messageReactionAdd', onReactionUpdate);
         Client.removeListener('messageReactionRemove', onReactionUpdate);
 
-        msg.reactions.forEach(reaction => ***REMOVED***
+        msg.reactions.forEach(reaction => {
           if(!['🇹', '🇫', '🇦', '🇧', '🇨', '🇩'].includes(reaction.emoji.name)) return;
 
-          if(e.guild.me.hasPermission('MANAGE_MESSAGES')) ***REMOVED***
-            reaction.users.forEach(user => ***REMOVED***
+          if(e.guild.me.hasPermission('MANAGE_MESSAGES')) {
+            reaction.users.forEach(user => {
               reaction.remove(user).catch(console.error);
-            ***REMOVED***);
-          ***REMOVED***else ***REMOVED***
+            });
+          }else {
             reaction.remove().catch(console.error);
-          ***REMOVED***
-        ***REMOVED***);
-      ***REMOVED***
-    ***REMOVED***).catch(console.error);
-  ***REMOVED***);
-***REMOVED***;
+          }
+        });
+      }
+    }).catch(console.error);
+  });
+};

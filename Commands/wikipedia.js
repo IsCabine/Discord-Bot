@@ -3,16 +3,16 @@ const Discord = require('discord.js');
 const joinArgs = require('../Functions/joinArgs');
 const embed_data = require('../Functions/getData')('embed');
 
-module.exports.run = (e, args, Client) => ***REMOVED***
-    (async () => ***REMOVED*** 
-        try ***REMOVED***
+module.exports.run = (e, args, Client) => {
+    (async () => { 
+        try {
             const page = await wikipedia.page(joinArgs(args));
             const summary = await page.summary();
             const url = summary.content_urls.desktop.page;
             let extract = summary.extract;
 
             if(extract.length > 2048)
-                extract = `$***REMOVED***extract.substring(0, 2045)***REMOVED***...`;
+                extract = `${extract.substring(0, 2045)}...`;
 
             const embed = new Discord.RichEmbed()
                 .setAuthor('📄 Wikipedia')
@@ -22,9 +22,9 @@ module.exports.run = (e, args, Client) => ***REMOVED***
                 .setThumbnail(summary.thumbnail.source)
                 .setFooter(embed_data.default_footer);
 
-            e.channel.send(***REMOVED*** embed ***REMOVED***);
-        ***REMOVED*** catch(error) ***REMOVED***
+            e.channel.send({ embed });
+        } catch(error) {
             e.channel.send('🇽 Article not found / unreadable');
-        ***REMOVED***
-    ***REMOVED***)();
-***REMOVED***;
+        }
+    })();
+};

@@ -1,3 +1,3 @@
-module.exports = function() ***REMOVED***
+module.exports = function() {
   return Array.from(this).reverse().join(new String());
-***REMOVED***;
+};

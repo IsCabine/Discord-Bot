@@ -6,10 +6,10 @@ const getData = require('../Functions/getData');
 const embed_data = getData('embed');
 const config = getData('config');
 
-module.exports.run = (e, args, Client) => ***REMOVED***
-    if(!config.ownerIDs.includes(e.author.id)) ***REMOVED***
+module.exports.run = (e, args, Client) => {
+    if(!config.ownerIDs.includes(e.author.id)) {
         return "🇽 You do not have permission to use this command";
-    ***REMOVED***
+    }
 
     let input = joinArgs(args);
 
@@ -22,5 +22,5 @@ module.exports.run = (e, args, Client) => ***REMOVED***
     embed.setFooter(embed_data.default_footer);
     embed.setColor(color);
 
-    return ***REMOVED***embed***REMOVED***;
-***REMOVED***;
+    return {embed};
+};

@@ -1,20 +1,20 @@
-***REMOVED***
+{
   "name": "Bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": ***REMOVED***
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  ***REMOVED***,
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": ***REMOVED***
+  "dependencies": {
     "discord.js": "^11.5.1",
     "jsdom": "^16.4.0",
     "mathjs": "^6.6.0",
     "request": "^2.88.0",
     "trivia-api": "^1.0.1",
     "wikipedia": "^1.0.1"
-  ***REMOVED***
-***REMOVED***
+  }
+}

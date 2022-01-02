@@ -1,5 +1,5 @@
 [
-  ***REMOVED***
+  {
     "value": "Dateline Standard Time",
     "abbr": "DST",
     "offset": -12,
@@ -7,9 +7,9 @@
     "text": "(UTC-12:00) International Date Line West",
     "utc": [
       "Etc/GMT+12"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "UTC-11",
     "abbr": "U",
     "offset": -11,
@@ -20,9 +20,9 @@
       "Pacific/Midway",
       "Pacific/Niue",
       "Pacific/Pago_Pago"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Hawaiian Standard Time",
     "abbr": "HST",
     "offset": -10,
@@ -34,9 +34,9 @@
       "Pacific/Johnston",
       "Pacific/Rarotonga",
       "Pacific/Tahiti"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Alaskan Standard Time",
     "abbr": "AKDT",
     "offset": -8,
@@ -48,9 +48,9 @@
       "America/Nome",
       "America/Sitka",
       "America/Yakutat"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Pacific Standard Time (Mexico)",
     "abbr": "PDT",
     "offset": -7,
@@ -58,9 +58,9 @@
     "text": "(UTC-08:00) Baja California",
     "utc": [
       "America/Santa_Isabel"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Pacific Daylight Time",
     "abbr": "PDT",
     "offset": -7,
@@ -72,9 +72,9 @@
       "America/Tijuana",
       "America/Vancouver",
       "America/Whitehorse"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Pacific Standard Time",
     "abbr": "PST",
     "offset": -8,
@@ -87,9 +87,9 @@
       "America/Vancouver",
       "America/Whitehorse",
       "PST8PDT"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "US Mountain Standard Time",
     "abbr": "UMST",
     "offset": -7,
@@ -101,9 +101,9 @@
       "America/Hermosillo",
       "America/Phoenix",
       "Etc/GMT+7"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Mountain Standard Time (Mexico)",
     "abbr": "MDT",
     "offset": -6,
@@ -112,9 +112,9 @@
     "utc": [
       "America/Chihuahua",
       "America/Mazatlan"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Mountain Standard Time",
     "abbr": "MDT",
     "offset": -6,
@@ -129,9 +129,9 @@
       "America/Ojinaga",
       "America/Yellowknife",
       "MST7MDT"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Central America Standard Time",
     "abbr": "CAST",
     "offset": -6,
@@ -146,9 +146,9 @@
       "America/Tegucigalpa",
       "Etc/GMT+6",
       "Pacific/Galapagos"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Central Standard Time",
     "abbr": "CDT",
     "offset": -5,
@@ -168,9 +168,9 @@
       "America/Resolute",
       "America/Winnipeg",
       "CST6CDT"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Central Standard Time (Mexico)",
     "abbr": "CDT",
     "offset": -5,
@@ -182,9 +182,9 @@
       "America/Merida",
       "America/Mexico_City",
       "America/Monterrey"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Canada Central Standard Time",
     "abbr": "CCST",
     "offset": -6,
@@ -193,9 +193,9 @@
     "utc": [
       "America/Regina",
       "America/Swift_Current"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "SA Pacific Standard Time",
     "abbr": "SPST",
     "offset": -5,
@@ -212,9 +212,9 @@
       "America/Panama",
       "America/Rio_Branco",
       "Etc/GMT+5"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Eastern Standard Time",
     "abbr": "EDT",
     "offset": -4,
@@ -238,9 +238,9 @@
       "America/Thunder_Bay",
       "America/Toronto",
       "EST5EDT"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "US Eastern Standard Time",
     "abbr": "UEDT",
     "offset": -4,
@@ -250,9 +250,9 @@
       "America/Indiana/Marengo",
       "America/Indiana/Vevay",
       "America/Indianapolis"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Venezuela Standard Time",
     "abbr": "VST",
     "offset": -4.5,
@@ -260,9 +260,9 @@
     "text": "(UTC-04:30) Caracas",
     "utc": [
       "America/Caracas"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Paraguay Standard Time",
     "abbr": "PYT",
     "offset": -4,
@@ -270,9 +270,9 @@
     "text": "(UTC-04:00) Asuncion",
     "utc": [
       "America/Asuncion"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Atlantic Standard Time",
     "abbr": "ADT",
     "offset": -3,
@@ -285,9 +285,9 @@
       "America/Moncton",
       "America/Thule",
       "Atlantic/Bermuda"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Central Brazilian Standard Time",
     "abbr": "CBST",
     "offset": -4,
@@ -296,9 +296,9 @@
     "utc": [
       "America/Campo_Grande",
       "America/Cuiaba"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "SA Western Standard Time",
     "abbr": "SWST",
     "offset": -4,
@@ -335,9 +335,9 @@
       "America/St_Vincent",
       "America/Tortola",
       "Etc/GMT+4"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Pacific SA Standard Time",
     "abbr": "PSST",
     "offset": -4,
@@ -346,9 +346,9 @@
     "utc": [
       "America/Santiago",
       "Antarctica/Palmer"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Newfoundland Standard Time",
     "abbr": "NDT",
     "offset": -2.5,
@@ -356,9 +356,9 @@
     "text": "(UTC-03:30) Newfoundland",
     "utc": [
       "America/St_Johns"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "E. South America Standard Time",
     "abbr": "ESAST",
     "offset": -3,
@@ -366,9 +366,9 @@
     "text": "(UTC-03:00) Brasilia",
     "utc": [
       "America/Sao_Paulo"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Argentina Standard Time",
     "abbr": "AST",
     "offset": -3,
@@ -387,9 +387,9 @@
       "America/Cordoba",
       "America/Jujuy",
       "America/Mendoza"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "SA Eastern Standard Time",
     "abbr": "SEST",
     "offset": -3,
@@ -407,9 +407,9 @@
       "Antarctica/Rothera",
       "Atlantic/Stanley",
       "Etc/GMT+3"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Greenland Standard Time",
     "abbr": "GDT",
     "offset": -3,
@@ -417,9 +417,9 @@
     "text": "(UTC-03:00) Greenland",
     "utc": [
       "America/Godthab"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Montevideo Standard Time",
     "abbr": "MST",
     "offset": -3,
@@ -427,9 +427,9 @@
     "text": "(UTC-03:00) Montevideo",
     "utc": [
       "America/Montevideo"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Bahia Standard Time",
     "abbr": "BST",
     "offset": -3,
@@ -437,9 +437,9 @@
     "text": "(UTC-03:00) Salvador",
     "utc": [
       "America/Bahia"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "UTC-02",
     "abbr": "U",
     "offset": -2,
@@ -449,17 +449,17 @@
       "America/Noronha",
       "Atlantic/South_Georgia",
       "Etc/GMT+2"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Mid-Atlantic Standard Time",
     "abbr": "MDT",
     "offset": -1,
     "isdst": true,
     "text": "(UTC-02:00) Mid-Atlantic - Old",
     "utc": []
-  ***REMOVED***,
-  ***REMOVED***
+  },
+  {
     "value": "Azores Standard Time",
     "abbr": "ADT",
     "offset": 0,
@@ -468,9 +468,9 @@
     "utc": [
       "America/Scoresbysund",
       "Atlantic/Azores"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Cape Verde Standard Time",
     "abbr": "CVST",
     "offset": -1,
@@ -479,9 +479,9 @@
     "utc": [
       "Atlantic/Cape_Verde",
       "Etc/GMT+1"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Morocco Standard Time",
     "abbr": "MDT",
     "offset": 1,
@@ -490,9 +490,9 @@
     "utc": [
       "Africa/Casablanca",
       "Africa/El_Aaiun"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "UTC",
     "abbr": "UTC",
     "offset": 0,
@@ -501,9 +501,9 @@
     "utc": [
       "America/Danmarkshavn",
       "Etc/GMT"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "GMT Standard Time",
     "abbr": "GMT",
     "offset": 0,
@@ -514,9 +514,9 @@
       "Europe/Guernsey",
       "Europe/Jersey",
       "Europe/London"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "British Summer Time",
     "abbr": "BST",
     "offset": 1,
@@ -527,9 +527,9 @@
       "Europe/Guernsey",
       "Europe/Jersey",
       "Europe/London"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "GMT Standard Time",
     "abbr": "GDT",
     "offset": 1,
@@ -541,9 +541,9 @@
       "Atlantic/Madeira",
       "Europe/Dublin",
       "Europe/Lisbon"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Greenwich Standard Time",
     "abbr": "GST",
     "offset": 0,
@@ -565,9 +565,9 @@
       "Africa/Sao_Tome",
       "Atlantic/Reykjavik",
       "Atlantic/St_Helena"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "W. Europe Standard Time",
     "abbr": "WEDT",
     "offset": 2,
@@ -591,9 +591,9 @@
       "Europe/Vatican",
       "Europe/Vienna",
       "Europe/Zurich"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Central Europe Standard Time",
     "abbr": "CEDT",
     "offset": 2,
@@ -607,9 +607,9 @@
       "Europe/Podgorica",
       "Europe/Prague",
       "Europe/Tirane"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Romance Standard Time",
     "abbr": "RDT",
     "offset": 2,
@@ -621,9 +621,9 @@
       "Europe/Copenhagen",
       "Europe/Madrid",
       "Europe/Paris"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Central European Standard Time",
     "abbr": "CEDT",
     "offset": 2,
@@ -634,9 +634,9 @@
       "Europe/Skopje",
       "Europe/Warsaw",
       "Europe/Zagreb"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "W. Central Africa Standard Time",
     "abbr": "WCAST",
     "offset": 1,
@@ -657,9 +657,9 @@
       "Africa/Porto-Novo",
       "Africa/Tunis",
       "Etc/GMT-1"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Namibia Standard Time",
     "abbr": "NST",
     "offset": 1,
@@ -667,9 +667,9 @@
     "text": "(UTC+01:00) Windhoek",
     "utc": [
       "Africa/Windhoek"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "GTB Standard Time",
     "abbr": "GDT",
     "offset": 3,
@@ -680,9 +680,9 @@
       "Europe/Athens",
       "Europe/Bucharest",
       "Europe/Chisinau"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Middle East Standard Time",
     "abbr": "MEDT",
     "offset": 3,
@@ -690,9 +690,9 @@
     "text": "(UTC+02:00) Beirut",
     "utc": [
       "Asia/Beirut"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Egypt Standard Time",
     "abbr": "EST",
     "offset": 2,
@@ -700,9 +700,9 @@
     "text": "(UTC+02:00) Cairo",
     "utc": [
       "Africa/Cairo"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Syria Standard Time",
     "abbr": "SDT",
     "offset": 3,
@@ -710,9 +710,9 @@
     "text": "(UTC+02:00) Damascus",
     "utc": [
       "Asia/Damascus"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "E. Europe Standard Time",
     "abbr": "EEDT",
     "offset": 3,
@@ -734,9 +734,9 @@
       "Europe/Vilnius",
       "Europe/Zaporozhye"
 
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "South Africa Standard Time",
     "abbr": "SAST",
     "offset": 2,
@@ -755,9 +755,9 @@
       "Africa/Maseru",
       "Africa/Mbabane",
       "Etc/GMT-2"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "FLE Standard Time",
     "abbr": "FDT",
     "offset": 3,
@@ -773,9 +773,9 @@
       "Europe/Uzhgorod",
       "Europe/Vilnius",
       "Europe/Zaporozhye"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Turkey Standard Time",
     "abbr": "TDT",
     "offset": 3,
@@ -783,9 +783,9 @@
     "text": "(UTC+03:00) Istanbul",
     "utc": [
       "Europe/Istanbul"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Israel Standard Time",
     "abbr": "JDT",
     "offset": 3,
@@ -793,9 +793,9 @@
     "text": "(UTC+02:00) Jerusalem",
     "utc": [
       "Asia/Jerusalem"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Libya Standard Time",
     "abbr": "LST",
     "offset": 2,
@@ -803,9 +803,9 @@
     "text": "(UTC+02:00) Tripoli",
     "utc": [
       "Africa/Tripoli"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Jordan Standard Time",
     "abbr": "JST",
     "offset": 3,
@@ -813,9 +813,9 @@
     "text": "(UTC+03:00) Amman",
     "utc": [
       "Asia/Amman"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Arabic Standard Time",
     "abbr": "AST",
     "offset": 3,
@@ -823,9 +823,9 @@
     "text": "(UTC+03:00) Baghdad",
     "utc": [
       "Asia/Baghdad"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Kaliningrad Standard Time",
     "abbr": "KST",
     "offset": 3,
@@ -834,9 +834,9 @@
     "utc": [
       "Europe/Kaliningrad",
       "Europe/Minsk"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Arab Standard Time",
     "abbr": "AST",
     "offset": 3,
@@ -848,9 +848,9 @@
       "Asia/Kuwait",
       "Asia/Qatar",
       "Asia/Riyadh"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "E. Africa Standard Time",
     "abbr": "EAST",
     "offset": 3,
@@ -871,9 +871,9 @@
       "Indian/Antananarivo",
       "Indian/Comoro",
       "Indian/Mayotte"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Moscow Standard Time",
     "abbr": "MSK",
     "offset": 3,
@@ -884,9 +884,9 @@
       "Europe/Moscow",
       "Europe/Simferopol",
       "Europe/Volgograd"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Samara Time",
     "abbr": "SAMT",
     "offset": 4,
@@ -896,9 +896,9 @@
 	    "Europe/Astrakhan",
       "Europe/Samara",
 	    "Europe/Ulyanovsk"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Iran Standard Time",
     "abbr": "IDT",
     "offset": 4.5,
@@ -906,9 +906,9 @@
     "text": "(UTC+03:30) Tehran",
     "utc": [
       "Asia/Tehran"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Arabian Standard Time",
     "abbr": "AST",
     "offset": 4,
@@ -918,9 +918,9 @@
       "Asia/Dubai",
       "Asia/Muscat",
       "Etc/GMT-4"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Azerbaijan Standard Time",
     "abbr": "ADT",
     "offset": 5,
@@ -928,9 +928,9 @@
     "text": "(UTC+04:00) Baku",
     "utc": [
       "Asia/Baku"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Mauritius Standard Time",
     "abbr": "MST",
     "offset": 4,
@@ -940,9 +940,9 @@
       "Indian/Mahe",
       "Indian/Mauritius",
       "Indian/Reunion"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Georgian Standard Time",
     "abbr": "GET",
     "offset": 4,
@@ -950,9 +950,9 @@
     "text": "(UTC+04:00) Tbilisi",
     "utc": [
       "Asia/Tbilisi"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Caucasus Standard Time",
     "abbr": "CST",
     "offset": 4,
@@ -960,9 +960,9 @@
     "text": "(UTC+04:00) Yerevan",
     "utc": [
       "Asia/Yerevan"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Afghanistan Standard Time",
     "abbr": "AST",
     "offset": 4.5,
@@ -970,9 +970,9 @@
     "text": "(UTC+04:30) Kabul",
     "utc": [
       "Asia/Kabul"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "West Asia Standard Time",
     "abbr": "WAST",
     "offset": 5,
@@ -990,9 +990,9 @@
       "Etc/GMT-5",
       "Indian/Kerguelen",
       "Indian/Maldives"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Yekaterinburg Time",
     "abbr": "YEKT",
     "offset": 5,
@@ -1000,9 +1000,9 @@
     "text": "(UTC+05:00) Yekaterinburg",
     "utc": [
       "Asia/Yekaterinburg"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Pakistan Standard Time",
     "abbr": "PKT",
     "offset": 5,
@@ -1010,9 +1010,9 @@
     "text": "(UTC+05:00) Islamabad, Karachi",
     "utc": [
       "Asia/Karachi"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "India Standard Time",
     "abbr": "IST",
     "offset": 5.5,
@@ -1020,9 +1020,9 @@
     "text": "(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi",
     "utc": [
       "Asia/Kolkata"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Sri Lanka Standard Time",
     "abbr": "SLST",
     "offset": 5.5,
@@ -1030,9 +1030,9 @@
     "text": "(UTC+05:30) Sri Jayawardenepura",
     "utc": [
       "Asia/Colombo"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Nepal Standard Time",
     "abbr": "NST",
     "offset": 5.75,
@@ -1040,9 +1040,9 @@
     "text": "(UTC+05:45) Kathmandu",
     "utc": [
       "Asia/Kathmandu"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Central Asia Standard Time",
     "abbr": "CAST",
     "offset": 6,
@@ -1056,9 +1056,9 @@
       "Asia/Urumqi",
       "Etc/GMT-6",
       "Indian/Chagos"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Bangladesh Standard Time",
     "abbr": "BST",
     "offset": 6,
@@ -1067,9 +1067,9 @@
     "utc": [
       "Asia/Dhaka",
       "Asia/Thimphu"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Myanmar Standard Time",
     "abbr": "MST",
     "offset": 6.5,
@@ -1078,9 +1078,9 @@
     "utc": [
       "Asia/Rangoon",
       "Indian/Cocos"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "SE Asia Standard Time",
     "abbr": "SAST",
     "offset": 7,
@@ -1097,9 +1097,9 @@
       "Asia/Vientiane",
       "Etc/GMT-7",
       "Indian/Christmas"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "N. Central Asia Standard Time",
     "abbr": "NCAST",
     "offset": 7,
@@ -1109,9 +1109,9 @@
       "Asia/Novokuznetsk",
       "Asia/Novosibirsk",
       "Asia/Omsk"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "China Standard Time",
     "abbr": "CST",
     "offset": 8,
@@ -1121,9 +1121,9 @@
       "Asia/Hong_Kong",
       "Asia/Macau",
       "Asia/Shanghai"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "North Asia Standard Time",
     "abbr": "NAST",
     "offset": 8,
@@ -1131,9 +1131,9 @@
     "text": "(UTC+08:00) Krasnoyarsk",
     "utc": [
       "Asia/Krasnoyarsk"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Singapore Standard Time",
     "abbr": "MPST",
     "offset": 8,
@@ -1147,9 +1147,9 @@
       "Asia/Manila",
       "Asia/Singapore",
       "Etc/GMT-8"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "W. Australia Standard Time",
     "abbr": "WAST",
     "offset": 8,
@@ -1158,9 +1158,9 @@
     "utc": [
       "Antarctica/Casey",
       "Australia/Perth"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Taipei Standard Time",
     "abbr": "TST",
     "offset": 8,
@@ -1168,9 +1168,9 @@
     "text": "(UTC+08:00) Taipei",
     "utc": [
       "Asia/Taipei"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Ulaanbaatar Standard Time",
     "abbr": "UST",
     "offset": 8,
@@ -1179,9 +1179,9 @@
     "utc": [
       "Asia/Choibalsan",
       "Asia/Ulaanbaatar"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "North Asia East Standard Time",
     "abbr": "NAEST",
     "offset": 8,
@@ -1189,9 +1189,9 @@
     "text": "(UTC+08:00) Irkutsk",
     "utc": [
       "Asia/Irkutsk"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Japan Standard Time",
     "abbr": "JST",
     "offset": 9,
@@ -1203,9 +1203,9 @@
       "Asia/Tokyo",
       "Etc/GMT-9",
       "Pacific/Palau"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Korea Standard Time",
     "abbr": "KST",
     "offset": 9,
@@ -1214,9 +1214,9 @@
     "utc": [
       "Asia/Pyongyang",
       "Asia/Seoul"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Cen. Australia Standard Time",
     "abbr": "CAST",
     "offset": 9.5,
@@ -1225,9 +1225,9 @@
     "utc": [
       "Australia/Adelaide",
       "Australia/Broken_Hill"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "AUS Central Standard Time",
     "abbr": "ACST",
     "offset": 9.5,
@@ -1235,9 +1235,9 @@
     "text": "(UTC+09:30) Darwin",
     "utc": [
       "Australia/Darwin"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "E. Australia Standard Time",
     "abbr": "EAST",
     "offset": 10,
@@ -1246,9 +1246,9 @@
     "utc": [
       "Australia/Brisbane",
       "Australia/Lindeman"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "AUS Eastern Standard Time",
     "abbr": "AEST",
     "offset": 10,
@@ -1257,9 +1257,9 @@
     "utc": [
       "Australia/Melbourne",
       "Australia/Sydney"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "West Pacific Standard Time",
     "abbr": "WPST",
     "offset": 10,
@@ -1272,9 +1272,9 @@
       "Pacific/Port_Moresby",
       "Pacific/Saipan",
       "Pacific/Truk"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Tasmania Standard Time",
     "abbr": "TST",
     "offset": 10,
@@ -1283,9 +1283,9 @@
     "utc": [
       "Australia/Currie",
       "Australia/Hobart"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Yakutsk Standard Time",
     "abbr": "YST",
     "offset": 9,
@@ -1295,9 +1295,9 @@
       "Asia/Chita",
       "Asia/Khandyga",
       "Asia/Yakutsk"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Central Pacific Standard Time",
     "abbr": "CPST",
     "offset": 11,
@@ -1311,9 +1311,9 @@
       "Pacific/Kosrae",
       "Pacific/Noumea",
       "Pacific/Ponape"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Vladivostok Standard Time",
     "abbr": "VST",
     "offset": 11,
@@ -1323,9 +1323,9 @@
       "Asia/Sakhalin",
       "Asia/Ust-Nera",
       "Asia/Vladivostok"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "New Zealand Standard Time",
     "abbr": "NZST",
     "offset": 12,
@@ -1334,9 +1334,9 @@
     "utc": [
       "Antarctica/McMurdo",
       "Pacific/Auckland"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "UTC+12",
     "abbr": "U",
     "offset": 12,
@@ -1351,9 +1351,9 @@
       "Pacific/Tarawa",
       "Pacific/Wake",
       "Pacific/Wallis"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Fiji Standard Time",
     "abbr": "FST",
     "offset": 12,
@@ -1361,9 +1361,9 @@
     "text": "(UTC+12:00) Fiji",
     "utc": [
       "Pacific/Fiji"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Magadan Standard Time",
     "abbr": "MST",
     "offset": 12,
@@ -1374,9 +1374,9 @@
       "Asia/Kamchatka",
       "Asia/Magadan",
       "Asia/Srednekolymsk"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Kamchatka Standard Time",
     "abbr": "KDT",
     "offset": 13,
@@ -1384,9 +1384,9 @@
     "text": "(UTC+12:00) Petropavlovsk-Kamchatsky - Old",
     "utc": [
       "Asia/Kamchatka"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Tonga Standard Time",
     "abbr": "TST",
     "offset": 13,
@@ -1397,9 +1397,9 @@
       "Pacific/Enderbury",
       "Pacific/Fakaofo",
       "Pacific/Tongatapu"
-***REMOVED***
-  ***REMOVED***,
-  ***REMOVED***
+    ]
+  },
+  {
     "value": "Samoa Standard Time",
     "abbr": "SST",
     "offset": 13,
@@ -1407,6 +1407,6 @@
     "text": "(UTC+13:00) Samoa",
     "utc": [
       "Pacific/Apia"
-***REMOVED***
-  ***REMOVED***
+    ]
+  }
 ]

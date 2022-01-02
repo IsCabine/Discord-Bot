@@ -1,13 +1,13 @@
-module.exports = () => ***REMOVED***
-  let promise = new Promise((resolve, reject) => ***REMOVED***
-    try ***REMOVED***
+module.exports = () => {
+  let promise = new Promise((resolve, reject) => {
+    try {
       let Now = new Date();
-      console.log(`Bot Started on $***REMOVED***Now.toDateString()***REMOVED*** | $***REMOVED***Now.toTimeString()***REMOVED***.`);
+      console.log(`Bot Started on ${Now.toDateString()} | ${Now.toTimeString()}.`);
       resolve();
-    ***REMOVED*** catch(error) ***REMOVED***
+    } catch(error) {
       reject(error);
-    ***REMOVED***
-  ***REMOVED***);
+    }
+  });
 
   return promise;
-***REMOVED***;
+};

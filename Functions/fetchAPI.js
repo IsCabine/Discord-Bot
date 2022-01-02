@@ -1,23 +1,23 @@
 const request = require('request');
 
-module.exports = url => ***REMOVED***
-  let promise = new Promise((resolve, reject) => ***REMOVED***
-    request(url, (error, response, body) => ***REMOVED***
-      if(error) ***REMOVED***
+module.exports = url => {
+  let promise = new Promise((resolve, reject) => {
+    request(url, (error, response, body) => {
+      if(error) {
         reject();
-        console.log(`[$***REMOVED***Date.now()***REMOVED***] Error recieved from request module:`);
+        console.log(`[${Date.now()}] Error recieved from request module:`);
         throw new Error(error);
-      ***REMOVED***
+      }
   
-      try ***REMOVED***
+      try {
         let json = JSON.parse(body);
         resolve(json);
-      ***REMOVED*** catch(err) ***REMOVED***
+      } catch(err) {
         reject();
-        console.log(`[$***REMOVED***Date.now()***REMOVED***] JSON [$***REMOVED***body***REMOVED***] is invalid.`);
-      ***REMOVED***
-    ***REMOVED***);
-  ***REMOVED***);
+        console.log(`[${Date.now()}] JSON [${body}] is invalid.`);
+      }
+    });
+  });
 
   return promise;
-***REMOVED***
+}

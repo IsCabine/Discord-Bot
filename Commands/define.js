@@ -7,46 +7,46 @@ const getData = require('../Functions/getData');
 const embed_data = getData('embed');
 const config = getData('config');
 
-module.exports.run = (e, args, Client) => ***REMOVED***
+module.exports.run = (e, args, Client) => {
   const arg = joinArgs(args);
   const key = config.dictionary_token;
   const restrictedRexExp = /\&|\?|\=|\/|\\|:|"|<|>|\||\./;
   const hasDisallowedChar = restrictedRexExp.test(arg);
-  const api_url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/$***REMOVED***arg***REMOVED***?key=$***REMOVED***key***REMOVED***`;
+  const api_url = `https://www.dictionaryapi.com/api/v3/references/collegiate/json/${arg}?key=${key}`;
 
   if(args.length < 1) return '🇽 You must supply a word to define';
   if(hasDisallowedChar) return '🇽 This word has a blocked character. :(\n   | Inputs to this command cannot contain `&, ?, =, /, \\, :, ", <, >, |, or .`'
   
-  fetchAPI(api_url).then(fetched => ***REMOVED***
-    let unfoundError = () => e.channel.send(`🇽 The word \`$***REMOVED***arg***REMOVED***\` is not recognized.`);
+  fetchAPI(api_url).then(fetched => {
+    let unfoundError = () => e.channel.send(`🇽 The word \`${arg}\` is not recognized.`);
     if(fetched.length < 1) return unfoundError();
 
     let maxDefinitions = index = 0;
     let isLocked = false;
 
-    try ***REMOVED***
+    try {
       var names = fetched.map(def => def.meta.id.split(':')[0]);
-    ***REMOVED*** catch(error) ***REMOVED***
+    } catch(error) {
       return unfoundError();
-    ***REMOVED***
+    }
 
-    names.forEach(name => ***REMOVED***
+    names.forEach(name => {
       if(names[0] === name) maxDefinitions++;
-    ***REMOVED***);
+    });
 
     let color = generateEmbedColor();
     let runGenerateEmbed = () => generateEmbed(fetched, index, arg, maxDefinitions, color, isLocked);
     let embed = runGenerateEmbed();
 
-    e.channel.send(embed).then(message => ***REMOVED***
+    e.channel.send(embed).then(message => {
       if(maxDefinitions === 1) return;
 
-      message.react('◀').then(() => message.react('▶').then(() => ***REMOVED***
-        let onReactionUpdate = (reaction, user) => ***REMOVED***
+      message.react('◀').then(() => message.react('▶').then(() => {
+        let onReactionUpdate = (reaction, user) => {
           if(user.id !== e.author.id) return;
           if(reaction.message.id !== message.id) return;
 
-          switch(reaction.emoji.name) ***REMOVED***
+          switch(reaction.emoji.name) {
           case '◀':
             if(index === 0) index = maxDefinitions - 1;
             else index--;
@@ -59,57 +59,57 @@ module.exports.run = (e, args, Client) => ***REMOVED***
             
             message.edit(runGenerateEmbed());
             break;
-          ***REMOVED***
-        ***REMOVED***;
+          }
+        };
 
         Client.on('messageReactionAdd', onReactionUpdate);
         Client.on('messageReactionRemove', onReactionUpdate);
 
-        setTimeout(() => ***REMOVED***
-          message.reactions.forEach(reaction => ***REMOVED***
+        setTimeout(() => {
+          message.reactions.forEach(reaction => {
             if(reaction.emoji.name !== '◀' && reaction.emoji.name !== '▶') return;
 
-            if(e.guild.me.hasPermission('MANAGE_MESSAGES')) ***REMOVED***
-              reaction.users.forEach(user => ***REMOVED***
+            if(e.guild.me.hasPermission('MANAGE_MESSAGES')) {
+              reaction.users.forEach(user => {
                 reaction.remove(user).catch(console.error);
-              ***REMOVED***);
-            ***REMOVED***else ***REMOVED***
+              });
+            }else {
               reaction.remove().catch(console.error);
-            ***REMOVED***
-          ***REMOVED***);
+            }
+          });
 
           Client.removeListener('messageReactionAdd', onReactionUpdate);
           Client.removeListener('messageReactionRemove', onReactionUpdate);
 
           isLocked = true;
           message.edit(runGenerateEmbed());
-        ***REMOVED***, embed_data.timer_duration);
-      ***REMOVED***));
-    ***REMOVED***);
-  ***REMOVED***);
-***REMOVED***;
+        }, embed_data.timer_duration);
+      }));
+    });
+  });
+};
 
-function generateEmbed(fetched, index, arg, maxDefinitions, color, isLocked) ***REMOVED***
+function generateEmbed(fetched, index, arg, maxDefinitions, color, isLocked) {
   let data = fetched[index];
-  if(data.shortdef.length < 1) return `🇽 Cannot parse definition of \`$***REMOVED***arg***REMOVED***\`.`;
+  if(data.shortdef.length < 1) return `🇽 Cannot parse definition of \`${arg}\`.`;
 
   let embedTitle = data.meta.id.toProperCase();
-  if(data.date) embedTitle += ` ($***REMOVED***data.date.split('***REMOVED***')[0]***REMOVED***)`;
+  if(data.date) embedTitle += ` (${data.date.split('{')[0]})`;
 
   let definition = new String();
   let defNumber = 0;
-  data.shortdef.forEach(def => ***REMOVED***
+  data.shortdef.forEach(def => {
     defNumber++;
-    definition += `$***REMOVED***defNumber***REMOVED***. $***REMOVED***def***REMOVED***\n`;
-  ***REMOVED***);
+    definition += `${defNumber}. ${def}\n`;
+  });
 
   let embed = new Discord.RichEmbed();
   embed.setAuthor(`📙 Define`);
   embed.setTitle(embedTitle);
-  embed.setDescription(`$***REMOVED***data.meta.offensive ? '[Offensive] ' : new String()***REMOVED***($***REMOVED***data.fl.toProperCase()***REMOVED***)$***REMOVED***isLocked ? ' [Locked]' : new String()***REMOVED***`);
+  embed.setDescription(`${data.meta.offensive ? '[Offensive] ' : new String()}(${data.fl.toProperCase()})${isLocked ? ' [Locked]' : new String()}`);
   embed.addField('Definition', definition);
-  embed.setFooter(`Defintion $***REMOVED***index + 1***REMOVED***/$***REMOVED***maxDefinitions***REMOVED***\n$***REMOVED***embed_data.default_footer***REMOVED***`);
+  embed.setFooter(`Defintion ${index + 1}/${maxDefinitions}\n${embed_data.default_footer}`);
   embed.setColor(color);
 
-  return ***REMOVED***embed***REMOVED***;
-***REMOVED***
+  return {embed};
+}

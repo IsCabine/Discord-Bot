@@ -1,4 +1,4 @@
-***REMOVED***
+{
     "colors": [
         "AQUA",
         "GREEN",
@@ -8,7 +8,7 @@
         "ORANGE",
         "RED",
         "NAVY"
-***REMOVED***,
+    ],
     "default_footer": "- Gordon 2.0a",
     "timer_duration": 480000
-***REMOVED***
+}
